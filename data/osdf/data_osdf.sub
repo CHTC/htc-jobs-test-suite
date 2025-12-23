@@ -1,0 +1,15 @@
+batch_name = data_osdf
+
+log = logs/data_osdf.$(Cluster).log
+
+executable = data_osdf.sh
+output = data_osdf.out
+error = data_osdf.err
+
+transfer_input_files = osdf:///pelicanplatform/test/hello-world.txt
+
+request_cpus = 1
+request_memory = 1 GB
+request_disk = 1GB
+
+queue 1

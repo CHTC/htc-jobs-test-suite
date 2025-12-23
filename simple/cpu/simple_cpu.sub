@@ -1,0 +1,13 @@
+batch_name = simple_cpu
+
+log = logs/simple_cpu.$(Cluster).log
+
+shell = echo "Job running on `hostname` as `whoami`"
+output = simple_cpu.out
+error = simple_cpu.err
+
+request_cpus = 1
+request_memory = 1 GB
+request_disk = 1GB
+
+queue 1

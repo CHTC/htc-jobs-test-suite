@@ -1,0 +1,13 @@
+batch_name = data_cedar
+
+log = logs/data_cedar.$(Cluster).log
+
+executable = data_cedar.sh
+output = data_cedar.out
+error = data_cedar.err
+
+request_cpus = 1
+request_memory = 1 GB
+request_disk = 1GB
+
+queue 1
