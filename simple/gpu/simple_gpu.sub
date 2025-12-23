@@ -1,0 +1,20 @@
+batch_name = simple_gpu
+
+log = logs/simple_gpu.$(Cluster).log
+
+executable = simple_gpu.sh
+output = simple_gpu.out
+error = simple_gpu.err
+
+# Maximize potential run locations; may take a while to match anyways..
+requirements = (OpSysMajorVer >= 7)
+
++WantGPULab = true
++GPUJobLength = "short"
+request_gpus = 1
+
+request_cpus = 1
+request_memory = 1 GB
+request_disk = 1GB
+
+queue 1

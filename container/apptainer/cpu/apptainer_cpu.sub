@@ -1,0 +1,23 @@
+batch_name = apptainer_cpu
+
+log = logs/apptainer_cpu.$(Cluster).log
+
+# For now, have to manually provide the .sif location..
+# Once osdf:///ospool/uw-shared/public is set-up nicely, can point to a container there
+if ! defined my_sif_location
+    error : "Must define 'my_sif_location' variable!"
+endif
+
+container_image = $(my_sif_location)
+
+shell = ./version.sh
+output = apptainer_cpu.out
+error = apptainer_cpu.err
+
+transfer_input_files = ../../version.sh
+
+request_cpus = 1
+request_memory = 1 GB
+request_disk = 5GB
+
+queue 1
