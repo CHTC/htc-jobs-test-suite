@@ -1,0 +1,21 @@
+batch_name = docker_gpu
+
+log = logs/docker_gpu.$(Cluster).log
+
+container_image = docker://pytorch/pytorch:2.9.1-cuda12.8-cudnn9-runtime
+
+shell = ./docker_gpu.sh
+output = docker_gpu.out
+error = docker_gpu.err
+
+transfer_input_files = ../../version.sh, ../../pytorch.py, docker_gpu.sh
+
++WantGPULab = true
++GPUJobLength = "short"
+request_gpus = 1
+
+request_cpus = 1
+request_memory = 1 GB
+request_disk = 5GB
+
+queue 1

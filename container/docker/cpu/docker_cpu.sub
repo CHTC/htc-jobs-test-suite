@@ -1,0 +1,17 @@
+batch_name = docker_cpu
+
+log = logs/docker_cpu.$(Cluster).log
+
+container_image = docker://ubuntu:22.04
+
+shell = ./version.sh
+output = docker_cpu.out
+error = docker_cpu.err
+
+transfer_input_files = ../../version.sh
+
+request_cpus = 1
+request_memory = 1 GB
+request_disk = 5GB
+
+queue 1
