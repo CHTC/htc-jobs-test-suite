@@ -1,0 +1,13 @@
+batch_name = many_jobs_cpu
+
+log = logs/many_cpu.$(Cluster).log
+
+shell = echo "Job running on `hostname` as `whoami`" && sleep 120
+output = output/many_cpu.$(Process).out
+error = error/many_cpu.$(Process).err
+
+request_cpus = 1
+request_memory = 1 GB
+request_disk = 1GB
+
+queue 1000
