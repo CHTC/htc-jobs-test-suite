@@ -1,0 +1,14 @@
+JOB vanillaCPU simple_cpu.sub DIR simple/cpu
+JOB vanillaGPU simple_gpu.sub DIR simple/gpu
+JOB cedar data_cedar.sub DIR data/cedar
+JOB osdf data_osdf.sub DIR data/osdf
+
+JOB dockerCPU docker_cpu.sub DIR container/docker/cpu
+#VARS dockerCPU my_sif_location="osdf:///"
+JOB dockerGPU docker_gpu.sub DIR container/docker/gpu
+#VARS dockerGPU my_sif_location="osdf:///"
+JOB apptainerCPU apptainer_cpu.sub DIR container/apptainer/cpu
+#VARS apptainerCPU my_sif_location="osdf:///"
+JOB apptainerGPU apptainer_gpu.sub DIR container/apptainer/gpu
+#VARS apptainerGPU my_sif_location="osdf:///"
+
